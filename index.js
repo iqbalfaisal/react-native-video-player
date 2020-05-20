@@ -1,7 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import { View, StyleSheet, Image, TouchableOpacity, Platform, NativeModules } from 'react-native';
+import React, { Component} from 'react';
+import PropTypes from 'prop-types';
+import { View, StyleSheet, Image, TouchableOpacity, Platform, NativeModules, ViewPropTypes } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Video from 'react-native-video';
+
+
 const styles = StyleSheet.create({
   preloadingPlaceholder: {
     backgroundColor: 'black',
@@ -496,7 +499,7 @@ VideoPlayer.propTypes = {
   autoplay: PropTypes.bool,
   defaultMuted: PropTypes.bool,
   muted: PropTypes.bool,
-  style: View.propTypes.style,
+  style:  ViewPropTypes,
   controlsTimeout: PropTypes.number,
   disableControlsAutoHide: PropTypes.bool,
   loop: PropTypes.bool,
@@ -504,20 +507,20 @@ VideoPlayer.propTypes = {
   hideControlsOnStart: PropTypes.bool,
   endWithThumbnail: PropTypes.bool,
   customStyles: PropTypes.shape({
-    wrapper: View.propTypes.style,
+    wrapper:  ViewPropTypes,
     video: Video.propTypes.style,
-    videoWrapper: View.propTypes.style,
-    controls: View.propTypes.style,
+    videoWrapper:  ViewPropTypes,
+    controls:  ViewPropTypes,
     playControl: TouchableOpacity.propTypes.style,
     controlButton: TouchableOpacity.propTypes.style,
     controlIcon: Icon.propTypes.style,
     playIcon: Icon.propTypes.style,
-    seekBar: View.propTypes.style,
-    seekBarFullWidth: View.propTypes.style,
-    seekBarProgress: View.propTypes.style,
-    seekBarKnob: View.propTypes.style,
-    seekBarKnobSeeking: View.propTypes.style,
-    seekBarBackground: View.propTypes.style,
+    seekBar:  ViewPropTypes,
+    seekBarFullWidth:  ViewPropTypes,
+    seekBarProgress:  ViewPropTypes,
+    seekBarKnob: ViewPropTypes,
+    seekBarKnobSeeking:  ViewPropTypes,
+    seekBarBackground:  ViewPropTypes,
     thumbnail: Image.propTypes.style,
     playButton: TouchableOpacity.propTypes.style,
     playArrow: Icon.propTypes.style,
